@@ -256,9 +256,7 @@ export const projects = [
     date: "Jun 2023",
     description:
       "The Harvard University Website Clone is a front-end project built using only HTML and CSS. It replicates the layout and design of Harvard’s official homepage, featuring a responsive structure, a clean navigation bar, and organized content sections. This project highlights skills in semantic HTML, responsive design, and pixel-perfect UI replication.",
-    image:
-      "https://github.com/developerzohaib786/Dev-Portfolio/blob/main/harvard.jpg",
-    tags: [
+    image: "https://img.freepik.com/free-photo/programming-background-with-person-working-with-codes-computer_23-2150010125.jpg?semt=ais_hybrid&w=740",    tags: [
       "HTML",
       "CSS",
       "Responsive Design",
@@ -275,8 +273,7 @@ export const projects = [
     date: "July 2023",
     description:
       "This is a personal portfolio website built using HTML, CSS, and JavaScript, with interactive typing effects powered by the Typed.js library. It showcases the developer’s skills, projects, and contact details in a clean and responsive layout designed for an engaging user experience",
-    image:
-      "https://user-images.githubusercontent.com/64485885/234602896-a1bd8bcc-b72b-4821-83d6-8ad885bf435e.png",
+      image: "https://img.freepik.com/free-photo/programming-background-collage_23-2149901789.jpg?semt=ais_hybrid&w=740",
     tags: ["HTML", "CSS", "JavaScipt", "Typed Js", "VS Studio", "GitHub",],
     category: "JavaScript",
     github: "https://github.com/developerzohaib786/Portfolio",
@@ -288,8 +285,7 @@ export const projects = [
     date: "2024",
     description:
       "This is a simple and responsive Email Validator web app built using HTML, CSS, and JavaScript. It checks the validity of email addresses in real time and provides instant feedback to users with a clean and minimal interface.",
-    image:
-      "https://user-images.githubusercontent.com/64485885/234916413-96296f13-fe4b-4cc4-b215-e72bd7c27928.png",
+    image: "https://img.freepik.com/free-photo/programming-background-with-person-working-with-codes-computer_23-2150010130.jpg?semt=ais_hybrid&w=740",
     tags: [
       "HTML",
       "CSS",
@@ -309,7 +305,7 @@ export const projects = [
     description:
       "This Password Manager project is built using HTML, CSS, and JavaScript. It allows users to generate strong passwords, store them securely in the browser's local storage, and manage saved credentials through an intuitive and user-friendly interface.",
     image:
-      "https://github.com/rishavchanda/Brain-Tumor-Detection/raw/main/Readme_resource/Image2.png",
+      "https://img.freepik.com/premium-photo/html-system-websites-collage-design_23-2150432937.jpg?semt=ais_hybrid&w=740",
     tags: ["HTML", "CSS", "JavaScript", "Github", "VS Code", ],
     category: "JavaScript",
     github: "https://github.com/developerzohaib786/Password-Manager",
@@ -321,8 +317,7 @@ export const projects = [
     date: "2024",
     description:
       "The AI Assistant for Browser Search is a voice-activated web application developed using plain JavaScript by Zohaib Irshad, without relying on any third-party APIs. It utilizes the browser's built-in Web Speech features—specifically, SpeechRecognition and speechSynthesis—to create a responsive and interactive assistant that listens to voice commands and performs actions accordingly. Upon loading, the assistant greets the user based on the time of day and announces its initialization. When activated via a button click, it begins listening to the user's voice input and recognizes various commands such as opening popular websites like Google, YouTube, or Facebook, searching the web, checking the current time or date, and even opening Wikipedia articles. The assistant speaks responses aloud and dynamically updates the page with transcribed commands, creating a seamless and engaging user experience purely through browser-native JavaScript capabilities. Would you like help turning this into a portfolio project description or README section?",
-    image:
-      "https://camo.githubusercontent.com/fbf405040ae86b5d4a40f24e4ac034982cb8c0e2d850560ba64527997b258be8/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f6c6f67696e2d65613565322e61707073706f742e636f6d2f6f2f4255434b4f49442532302831292e706e673f616c743d6d6564696126746f6b656e3d32653735376235372d323964372d346263612d613562322d653164346538313432373435",
+      image: "https://img.freepik.com/free-vector/new-app-development-desktop_23-2148684987.jpg?semt=ais_hybrid&w=740",
     tags: ["HTML", "CSS", "JavaScript", ],
     category: "JavaScript",
     github: "https://github.com/developerzohaib786/AI-Assistant-for-Browser-Search",
@@ -335,7 +330,7 @@ export const projects = [
     description:
       "The End-to-End Chat App is a C++ project developed by Zohaib Irshad that demonstrates real-time communication using socket programming. The application comprises a client-server architecture, where the server listens for incoming connections and facilitates message exchange between connected clients. The client application connects to the server, enabling users to send and receive messages in real-time. This project serves as a practical example of implementing network communication in C++ using sockets, providing insights into handling concurrent connections and data transmission.",
     image:
-      "https://user-images.githubusercontent.com/64485885/255237090-cf798a2c-1b41-4bb7-b904-b5353a1f08e8.png",
+      "https://img.freepik.com/free-vector/laptop-with-program-code-isometric-icon-software-development-programming-applications-dark-neon_39422-971.jpg?ga=GA1.1.256969843.1746618636&semt=ais_hybrid&w=740",
     tags: ["Socket Programming in C++", ],
     category: "C++",
     github: "https://github.com/rishavchanda/Job-finder-App",
@@ -361,9 +356,9 @@ export const projects = [
     description:
       "This is a fully responsive ToDo web application built with React.js. It allows users to manage their daily tasks efficiently through a simple and clean user interface. Users can add, mark as complete, and delete tasks in real-time. The app uses React hooks for state management and features smooth UX transitions. It is deployed using Netlify for fast and secure access.",
     image:
-      "https://camo.githubusercontent.com/a328255ad96f861f57d25096d28018ab2656c689a1456b0d145764009bed2d1a/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
+      "https://img.freepik.com/free-photo/programming-background-with-person-working-with-codes-computer_23-2150010125.jpg?ga=GA1.1.256969843.1746618636&semt=ais_hybrid&w=740",
     tags: ["React Js", "Local Storage", "Git", "GitHub"],
-    category: "MERN",
+    category: "React",
     github: "https://github.com/developerzohaib786/React-todo-app",
     webapp: "https://todo-sz.netlify.app/",
   },
@@ -373,38 +368,37 @@ export const projects = [
     date: "2025",
     description:
       "This is a full-featured Learning Management System (LMS) being developed using the MERN stack (MongoDB, Express.js, React.js, Node.js). The goal of the project is to create a scalable and intuitive platform where instructors can upload courses and manage content, while students can register, enroll in courses, and track their learning progress.",
-    image:
-      "https://camo.githubusercontent.com/cd07010cbeb90cb1b43a5d6162784326aef02210ef7d41a0f9ae043b3e392378/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f7425323028313534292e706e673f616c743d6d6564696126746f6b656e3d65613439383630632d303435362d343333342d616435372d336239346663303333363263",
+      image: "https://img.freepik.com/premium-photo/html-system-websites-concept_23-2150323552.jpg?ga=GA1.1.256969843.1746618636&semt=ais_hybrid&w=740",
     tags: ["React Js", "MongoDB", "NodeJS", "ExpressJS"],
-    category: "MERN",
+    category: "React",
     github: "https://github.com/rishavchanda/Breaking-Bad",
     webapp: "https://breaking-bad-webapp.netlify.app",
   },
   {
     id: 7,
-    title: "Quiz App",
-    date: "Dec 2020 - Jan 2021",
+    title: "URL Shortner",
+    date: "2024",
     description:
-      "A android quiz app made with Java and Firebase. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the quiz categories and can create a new quiz. It has a leaderboard where users can see the top 10 scorers. It has a search bar where users can search for a particular quiz.",
+      "The URL-shortner-NodeJS-Project is a straightforward URL shortening service developed using Node.js and Express.js. It enables users to convert lengthy URLs into shorter, more manageable links while tracking the number of times each shortened URL is accessed.",
     image:
       "https://github-production-user-asset-6210df.s3.amazonaws.com/64485885/239726262-c1b061d1-d9d0-42ef-9f1c-0412d14bc4f6.gif",
-    tags: ["Java", "Android Studio", "Firebase", "Google Auth"],
-    category: "android app",
+    tags: ["NodeJS", "ExpressJS", "MongoDB", "POSTMAN"],
+    category: "backend",
     github: "https://github.com/rishavchanda/Quiz-Earn",
     webapp: "https://github.com/rishavchanda/Quiz-Earn",
   },
   {
     id: 8,
-    title: "Face Recognition",
-    date: "Jan 2021",
+    title: "Blog Website",
+    date: "2025",
     description:
-      "A Face recognition python app made with OpenCV. It uses face_recognition library to detect faces. It uses the webcam to detect faces. It also has a search bar to search for a particular face.",
+      "The Blog Application Backend NodeJS project by developerzohaib786 is a backend server built using Node.js and Express.js, designed to support the core functionality of a blog platform. It utilizes EJS (Embedded JavaScript) as the templating engine to render dynamic HTML content and follows a modular architecture with clearly defined folders for middleware, models, routes, services, and views. The backend handles routing, business logic, and data persistence, most likely using MongoDB via Mongoose. Static assets are served from the public directory, while environment configurations are managed through a .env file. The application is live and deployed on Vercel at blog-application-backend-node-js.vercel.app. This project demonstrates a clean separation of concerns and provides a solid foundation for building a full-stack blog application.",
     image:
-      "https://camo.githubusercontent.com/a8b3e1ebf26d4c95f75bc6671189a3590eb67eb8332d7c7452492990e731efb9/68747470733a2f2f77617265686f7573652d63616d6f2e696e67726573732e636d68312e707366686f737465642e6f72672f356137383335396561323762643261633232336437656662306639303831306437373930383436312f363837343734373037333361326632663633366336663735363432653637363937343638373536323735373336353732363336663665373436353665373432653633366636643266363137333733363537343733326633383339333633363339333232663332333433343333333033333339333832663333333636363330363533333636333032643331333336333632326433313331363533373264333833323335333832643334363433303633333936333635333136353334333133393265363736393636",
-    tags: ["Python", "Keras", "TensorFlow", "VGG16", "Pickle", "React"],
-    category: "machine learning",
-    github: "https://github.com/rishavchanda/Face-Recodnition-AI-with-Python",
-    webapp: "https://github.com/rishavchanda/Face-Recodnition-AI-with-Python",
+      "https://img.freepik.com/free-vector/new-app-development-desktop_23-2148684987.jpg?ga=GA1.1.256969843.1746618636&semt=ais_hybrid&w=740",
+    tags: ["NodeJS", "ExpressJS", "MongoDB", "EJS", "VS Code", "Git"],
+    category: "backend",
+    github: "https://github.com/developerzohaib786/Blog-Application-Backend-NodeJS",
+    webapp: "",
   },
 ];
 
