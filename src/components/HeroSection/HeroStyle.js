@@ -184,8 +184,7 @@ export const ResumeButton = styled.a`
     background: hsla(271, 100%, 50%, 1);
     background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
     background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    box-shadow:  20px 20px 60px #1F2634,
+    background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsl(117.42deg 77.91% 46.2%) 100%);    box-shadow:  20px 20px 60px #1F2634,
     -20px -20px 60px #1F2634;
     &:hover {
         transform: scale(1.05);
