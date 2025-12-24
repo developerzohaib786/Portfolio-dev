@@ -10,6 +10,8 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Experience from "./components/Experience";
+import PullRequests from "./components/PullRequests";
+import ContributionGraph from "./components/ContributionGraph";
 import Education from "./components/Education";
 import Reviews from "./components/Reviews/Reviews";
 import ProjectDetails from "./components/ProjectDetails";
@@ -39,6 +41,8 @@ function App() {
           <Wrapper>
             <Skills />
             <Experience />
+            <PullRequests />
+            <ContributionGraph />
           </Wrapper>
           <Projects openModal={openModal} setOpenModal={setOpenModal} />
           <Wrapper>
