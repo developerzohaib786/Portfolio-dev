@@ -11,23 +11,6 @@ const Container = styled.div`
   margin: 2rem 0;
 `;
 
-const ImageSection = styled.div`
-  flex: 1;
-  background: ${({ theme }) => theme.card || '#232323'};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 220px;
-  padding: 2rem;
-`;
-
-const StyledImage = styled.img`
-  width: 100%;
-  max-width: 200px;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-`;
-
 const ContentSection = styled.div`
   flex: 2;
   padding: 2rem;
@@ -104,12 +87,6 @@ const SubTitle = styled.h3`
   text-align: center;
   margin-bottom: 1rem;
   color: ${({ theme }) => theme.text_secondary || '#aaa'};
-`;
-
-const RepoName = styled.span`
-  font-weight: 600;
-  color: #fff;
-  margin-right: 0.5rem;
 `;
 
 const RepoTag = styled.span`

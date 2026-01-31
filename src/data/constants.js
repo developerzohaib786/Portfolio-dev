@@ -69,7 +69,6 @@ export const skills = [
         name: "Node Js",
         image: "https://nodejs.org/static/images/logo.svg",
       },
-      ,
       {
         name: "Next Js",
         image:
