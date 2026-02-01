@@ -12,8 +12,6 @@ import Footer from "./components/Footer";
 import Experience from "./components/Experience";
 import PullRequests from "./components/PullRequests";
 import ContributionGraph from "./components/ContributionGraph";
-import Education from "./components/Education";
-import Reviews from "./components/Reviews/Reviews";
 import ProjectDetails from "./components/ProjectDetails";
 import styled from "styled-components";
 
@@ -29,7 +27,7 @@ const Wrapper = styled.div`
   clip-path: polygon(0 0, 100% 0, 100% 100%,30% 98%, 0 100%);
 `
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode] = useState(true);
   const [openModal, setOpenModal] = useState({ state: false, project: null });
   console.log(openModal)
   return (
