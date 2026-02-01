@@ -69,7 +69,6 @@ export const skills = [
         name: "Node Js",
         image: "https://nodejs.org/static/images/logo.svg",
       },
-      ,
       {
         name: "Next Js",
         image:
@@ -231,7 +230,7 @@ export const education = [
     desc: "I am currently pursuing a Bachelor of Science in Software Engineering at Air University, Islamabad. Throughout my academic journey, I have gained a strong foundation in computer science principles, software development, and system design. My studies have included courses on programming languages, data structures, algorithms, web development, database systems, and software engineering methodologies. I am passionate about applying my knowledge to real-world projects, continuously honing my skills in full-stack development, API integration, and collaborative software development. My education is preparing me for a successful career in the tech industry, equipping me with both technical expertise and the problem-solving skills required to tackle complex challenges.",
     degree: "Bachelor's in Software Engineering",
   },
- 
+
 ];
 
 export const projects = [
