@@ -1,196 +1,353 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { FiExternalLink } from 'react-icons/fi';
+import pullRequestsData from '../../data/pullrequest.js';
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column; /* Ensure heading and list stack vertically */
-  align-items: stretch;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
-  overflow: hidden;
-  margin: 2rem 0;
+const Wrapper = styled.section`
+  width: 100%;
+  padding: 80px 0 60px;
 `;
 
-// const ImageSection = styled.div`
-//   flex: 1;
-//   background: ${({ theme }) => theme.card || '#232323'};
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   min-width: 220px;
-//   padding: 2rem;
-// `;
+const Inner = styled.div`
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  margin: 0 auto;
+`;
 
-// const StyledImage = styled.img`
-//   width: 100%;
-//   max-width: 200px;
-//   border-radius: 12px;
-//   box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-// `;
+const PageChip = styled.span`
+  display: inline-block;
+  border: 1px solid ${({ theme }) => theme.primary || '#00ff9d'};
+  color: ${({ theme }) => theme.primary || '#00ff9d'};
+  font-size: 11px;
+  font-family: monospace;
+  letter-spacing: 0.12em;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+`;
 
-const ContentSection = styled.div`
-  flex: 2;
-  padding: 2rem;
+const HeroHeading = styled.h1`
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: ${({ theme }) => theme.text_primary || '#fff'};
+  margin: 0 0 20px;
+
+  span {
+    color: ${({ theme }) => theme.primary || '#00ff9d'};
+  }
+`;
+
+const HeroDesc = styled.p`
+  font-size: 15px;
+  color: ${({ theme }) => theme.text_secondary || '#aaa'};
+  max-width: 520px;
+  line-height: 1.7;
+  margin: 0 0 56px;
+`;
+
+const SectionHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+`;
+
+const SectionTitle = styled.h2`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: ${({ theme }) => theme.text_primary || '#fff'};
+  margin: 0;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    opacity: 0.7;
+  }
+`;
+
+const scrollAnim = keyframes`
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+`;
+
+const CardsViewport = styled.div`
+  overflow: hidden;
+  width: 100%;
+`;
+
+const CardsTrack = styled.div`
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: ${scrollAnim} 40s linear infinite;
+  &:hover { animation-play-state: paused; }
+`;
+
+const Card = styled.a`
+  flex: 0 0 260px;
+  background: ${({ theme }) => theme.card || '#181818'};
+  border: 1px solid ${({ theme }) => theme.card_border || '#2a2a2a'};
+  border-radius: 12px;
+  padding: 18px 18px 16px;
+  text-decoration: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-`;
+  min-height: 160px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
 
-const Title = styled.h2`
-  font-size: 42px;
-  text-align: center;
-  font-weight: 600;
-  margin-top: 20px;
-  margin-bottom: 20px; /* Added spacing below heading */
-  color: ${({ theme }) => theme.text_primary || '#fff'};
-  @media (max-width: 768px) {
-      margin-top: 12px;
-      font-size: 32px;
-  }
-`;
-
-const scrollLeft = keyframes`
-  0% { transform: translateX(0%); } /* Changed from 100% to 0% for smoother infinite loop */
-  100% { transform: translateX(-50%); } 
-`;
-
-const scrollRight = keyframes`
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0%); }
-`;
-
-const PullRequestsRow = styled.div`
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-`;
-
-const AnimatedList = styled.div`
-  display: flex;
-  width: max-content;
-  /* Speed adjusted from 50s to 200s for a slower, readable pace */
-  animation: ${({ direction }) => direction === 'left' ? scrollLeft : scrollRight} 100s linear infinite;
-  align-items: center;
   &:hover {
-    animation-play-state: paused;
+    border-color: ${({ theme }) => theme.primary || '#00ff9d'};
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.primary + '30' || '#00ff9d30'};
   }
 `;
 
-const PullRequestItem = styled.div`
+const CardTop = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+`;
+
+const StatusBadge = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-family: monospace;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid ${({ status }) =>
+    status === 'Merged' ? '#2ea04330' :
+    status === 'Open' ? '#388bfd30' :
+    '#6e767d30'};
+  background: ${({ status }) =>
+    status === 'Merged' ? '#2ea04310' :
+    status === 'Open' ? '#388bfd10' :
+    '#6e767d10'};
+  color: ${({ status }) =>
+    status === 'Merged' ? '#3fb950' :
+    status === 'Open' ? '#58a6ff' :
+    '#8b949e'};
+`;
+
+const StatusDot = styled.span`
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: ${({ status }) =>
+    status === 'Merged' ? '#3fb950' :
+    status === 'Open' ? '#58a6ff' :
+    '#8b949e'};
+`;
+
+const ExternalIcon = styled.span`
+  color: ${({ theme }) => theme.text_secondary || '#666'};
   display: flex;
   align-items: center;
-  background: ${({ theme }) => theme.card || '#232323'};
-  border-radius: 8px;
-  color: ${({ theme }) => theme.text || '#fff'};
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  margin-right: 1.5rem;
-  padding: 0.5rem 1.2rem 0.5rem 0.7rem;
-  font-size: 1rem;
-  min-width: 180px;
-  border: 1px solid #222;
+  font-size: 14px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+
+  ${Card}:hover & {
+    opacity: 1;
+  }
 `;
 
-const RepoAvatar = styled.img`
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  margin-right: 0.7rem;
-  background: #181818;
-  border: 1px solid #333;
-`;
-
-const SubTitle = styled.h3`
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: ${({ theme }) => theme.text_secondary || '#aaa'};
-`;
-
-// const RepoName = styled.span`
-//   font-weight: 600;
-//   color: #fff;
-//   margin-right: 0.5rem;
-// `;
-
-const RepoTag = styled.span`
-  background: #181818;
-  color: #fff;
-  border-radius: 6px;
-  padding: 0.1rem 0.7rem;
-  font-size: 1rem;
+const CardTitle = styled.p`
+  font-size: 13.5px;
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  border: 1px solid #333;
+  color: ${({ theme }) => theme.text_primary || '#e6edf3'};
+  line-height: 1.5;
+  margin: 0 0 auto;
+  flex: 1;
 `;
 
-const pullRequests = [
-  {
-    id: 1,
-    name: "apache/polaris-tools",
-    link: "https://github.com/apache/polaris-tools/pull/115",
-    logo: "https://media.licdn.com/dms/image/sync/v2/D4E27AQFzuyZNqIKOkw/articleshare-shrink_800/articleshare-shrink_800/0/1725260591788?e=2147483647&v=beta&t=MDLsCfzNFR8EG5IRoZJNy5yf8mGKLaiwoqqvNL1sbJo"
-  },
-  {
-    id: 2,
-    name: "apache/polaris-tools",
-    link: "https://github.com/apache/polaris-tools/pull/114",
-    logo: "https://media.licdn.com/dms/image/sync/v2/D4E27AQFzuyZNqIKOkw/articleshare-shrink_800/articleshare-shrink_800/0/1725260591788?e=2147483647&v=beta&t=MDLsCfzNFR8EG5IRoZJNy5yf8mGKLaiwoqqvNL1sbJo"
-  },
-  {
-    id: 3,
-    name: "apache/doris-website",
-    link: "https://github.com/apache/doris-website/pull/3208",
-    logo: "https://media.licdn.com/dms/image/v2/D560BAQE6udryVsnvrw/company-logo_200_200/B56ZdDL9UYG0AI-/0/1749178898304/doris_apache_logo?e=2147483647&v=beta&t=0ERdCfbxY_VX2mOsE5-5YfzAOFBexTBUqi4i15cY9yE"
-  },
-  {
-    id: 4,
-    name: "apache/superset",
-    link: "https://github.com/apache/superset/pull/36197",
-    logo: "https://images.ctfassets.net/ykljvmtfxwdz/2RpVpksd9zAQIHIozAjPoV/dffe3ffc5d31383f606dfc18c8778ef2/superset_thumb.jpg?w=1109&h=740&fl=progressive&q=80&fm=jpg"
-  },
-  {
-    id: 5,
-    name: "apache/superset",
-    link: "https://github.com/apache/superset/pull/36085",
-    logo: "https://images.ctfassets.net/ykljvmtfxwdz/2RpVpksd9zAQIHIozAjPoV/dffe3ffc5d31383f606dfc18c8778ef2/superset_thumb.jpg?w=1109&h=740&fl=progressive&q=80&fm=jpg"
-  },
-  {
-    id: 6,
-    name: "processing/p5.js-web-editor",
-    link: "https://github.com/processing/p5.js-web-editor/pull/3570",
-    logo: "https://happycoding.io/tutorials/p5js/images/hello-world-3.png"
-  },
-  {
-    id: 7,
-    name: "mudasarmajeed5/links-hub",
-    link: "https://github.com/mudasarmajeed5/links-hub/pull/13",
-    logo: "https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU"
-  },
-];
+const CardFooter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+`;
+
+const RepoPath = styled.span`
+  font-size: 11px;
+  font-family: monospace;
+  color: ${({ theme }) => theme.text_secondary || '#8b949e'};
+`;
+
+const PRNumber = styled.span`
+  font-size: 11px;
+  font-family: monospace;
+  color: ${({ theme }) => theme.text_secondary || '#8b949e'};
+`;
+
+const CTABox = styled.div`
+  margin-top: 56px;
+  border: 1px solid ${({ theme }) => theme.card_border || '#2a2a2a'};
+  border-radius: 16px;
+  background: ${({ theme }) => theme.card || '#181818'};
+  padding: 48px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+
+  @media (max-width: 680px) {
+    flex-direction: column;
+    padding: 36px 28px;
+    align-items: flex-start;
+  }
+`;
+
+const CTALeft = styled.div`
+  flex: 1;
+`;
+
+const CTABadge = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  font-family: monospace;
+  letter-spacing: 0.1em;
+  color: ${({ theme }) => theme.primary || '#00ff9d'};
+  margin-bottom: 16px;
+`;
+
+const CTADot = styled.span`
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: ${({ theme }) => theme.primary || '#00ff9d'};
+`;
+
+const CTAHeading = styled.h3`
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  color: ${({ theme }) => theme.text_primary || '#fff'};
+  margin: 0 0 12px;
+  line-height: 1.2;
+`;
+
+const CTADesc = styled.p`
+  font-size: 13.5px;
+  color: ${({ theme }) => theme.text_secondary || '#8b949e'};
+  line-height: 1.6;
+  margin: 0;
+  max-width: 380px;
+`;
+
+const CTAButtons = styled.div`
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+
+  @media (max-width: 680px) {
+    margin-top: 24px;
+  }
+`;
+
+const PrimaryBtn = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: ${({ theme }) => theme.primary || '#00ff9d'};
+  color: #000;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+
+  &:hover { opacity: 0.85; }
+`;
+
+const SecondaryBtn = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: 1px solid ${({ theme }) => theme.primary || '#00FF00'};
+  color: ${({ theme }) => theme.primary || '#00FF00'};
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  background: transparent;
+  transition: background 0.2s;
+
+  &:hover {
+    background: ${({ theme }) => theme.primary + '15' || '#00FF0015'};
+  }
+`;
+
+function parseLink(link) {
+  try {
+    const parts = link.replace('https://github.com/', '').split('/pull/');
+    return { repo: parts[0], number: '#' + parts[1] };
+  } catch {
+    return { repo: '', number: '' };
+  }
+}
+
+const doubled = [...pullRequestsData, ...pullRequestsData];
 
 const PullRequests = () => {
   return (
-    <Container>
-      <ContentSection>
-        <Title>
-          <RepoAvatar src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Google_Summer_of_Code_sun_logo_2022.svg/960px-Google_Summer_of_Code_sun_logo_2022.svg.png" alt="repo" /> <span>Open Source Contribution</span>
-        </Title>
-        <SubTitle>Playing with Large Codebases 🙌</SubTitle>
-        <PullRequestsRow>
-          <AnimatedList direction="left">
-            {Array(10).fill(pullRequests).flat().map((pr, idx) => (
-              <a key={pr.id + '-row1-' + idx} href={pr.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                <PullRequestItem>
-                  <RepoAvatar src={pr.logo} alt="repo" />
-                  <RepoTag>@{pr.name}</RepoTag>
-                </PullRequestItem>
-              </a>
-            ))}
-          </AnimatedList>
-        </PullRequestsRow>
-      </ContentSection>
-    </Container>
+    <Wrapper>
+      <Inner>
+        <PageChip>Open Source Contributions</PageChip>
+        <HeroHeading>
+          Playing with{' '}  <span>Large Codebases 🙌</span>
+        </HeroHeading>
+
+        <SectionHeader>
+          <SectionTitle>
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354Z"/></svg>
+            Recent Pull Requests
+          </SectionTitle>
+        </SectionHeader>
+
+        <CardsViewport>
+          <CardsTrack>
+            {doubled.map((pr, i) => {
+              const { repo, number } = parseLink(pr.link);
+              return (
+                <Card
+                  key={i}
+                  href={pr.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <CardTop>
+                    <StatusBadge status={pr.status}>
+                      <StatusDot status={pr.status} />
+                      {pr.status.toUpperCase()}
+                    </StatusBadge>
+                    <ExternalIcon><FiExternalLink /></ExternalIcon>
+                  </CardTop>
+                  <CardTitle>{pr.title}</CardTitle>
+                  <CardFooter>
+                    <RepoPath>{repo}</RepoPath>
+                    <PRNumber>{number}</PRNumber>
+                  </CardFooter>
+                </Card>
+              );
+            })}
+          </CardsTrack>
+        </CardsViewport>
+      </Inner>
+    </Wrapper>
   );
 };
 

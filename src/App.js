@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import Experience from "./components/Experience";
 import PullRequests from "./components/PullRequests";
 import ContributionGraph from "./components/ContributionGraph";
+import Hackathons from "./components/Hackathons";
 import ProjectDetails from "./components/ProjectDetails";
 import styled from "styled-components";
 
@@ -39,12 +40,11 @@ function App() {
           <Wrapper>
             <Skills />
             <Experience />
-            <PullRequests />
-            <ContributionGraph />
           </Wrapper>
+          <PullRequests />
+          <Hackathons />
           <Projects openModal={openModal} setOpenModal={setOpenModal} />
           <Wrapper>
-            {/* <Reviews/> */}
             <Contact />
           </Wrapper>
           <Footer />
