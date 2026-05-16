@@ -319,7 +319,7 @@ export const projects = [
     description:
       "The URL-shortner-NodeJS-Project is a straightforward URL shortening service developed using Node.js and Express.js. It enables users to convert lengthy URLs into shorter, more manageable links while tracking the number of times each shortened URL is accessed.",
     image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/64485885/239726262-c1b061d1-d9d0-42ef-9f1c-0412d14bc4f6.gif",
+      "/url.png",
     tags: ["NodeJS", "ExpressJS", "MongoDB", "POSTMAN"],
     category: "backend",
     github: "https://github.com/developerzohaib786/URL-shortner-NodeJS-Project",
@@ -331,7 +331,7 @@ export const projects = [
     date: "2024",
     description:
       "The AI Assistant for Browser Search is a voice-activated web application developed using plain JavaScript by Zohaib Irshad, without relying on any third-party APIs. It utilizes the browser's built-in Web Speech features—specifically, SpeechRecognition and speechSynthesis—to create a responsive and interactive assistant that listens to voice commands and performs actions accordingly. Upon loading, the assistant greets the user based on the time of day and announces its initialization. When activated via a button click, it begins listening to the user's voice input and recognizes various commands such as opening popular websites like Google, YouTube, or Facebook, searching the web, checking the current time or date, and even opening Wikipedia articles. The assistant speaks responses aloud and dynamically updates the page with transcribed commands, creating a seamless and engaging user experience purely through browser-native JavaScript capabilities. Would you like help turning this into a portfolio project description or README section?",
-    image: "https://img.freepik.com/free-vector/new-app-development-desktop_23-2148684987.jpg?semt=ais_hybrid&w=740",
+    image: "/ai.png",
     tags: ["HTML", "CSS", "JavaScript",],
     category: "Generative AI",
     github: "https://github.com/developerzohaib786/AI-Assistant-for-Browser-Search",
@@ -344,7 +344,7 @@ export const projects = [
     description:
       "The Blog Application Backend NodeJS project by developerzohaib786 is a backend server built using Node.js and Express.js, designed to support the core functionality of a blog platform. It utilizes EJS (Embedded JavaScript) as the templating engine to render dynamic HTML content and follows a modular architecture with clearly defined folders for middleware, models, routes, services, and views. The backend handles routing, business logic, and data persistence, most likely using MongoDB via Mongoose. Static assets are served from the public directory, while environment configurations are managed through a .env file. The application is live and deployed on Vercel at blog-application-backend-node-js.vercel.app. This project demonstrates a clean separation of concerns and provides a solid foundation for building a full-stack blog application.",
     image:
-      "https://img.freepik.com/free-vector/new-app-development-desktop_23-2148684987.jpg?ga=GA1.1.256969843.1746618636&semt=ais_hybrid&w=740",
+      "/blog.png",
     tags: ["NodeJS", "ExpressJS", "MongoDB", "EJS", "VS Code", "Git"],
     category: "backend",
     github: "https://github.com/developerzohaib786/Blog-Application-Backend-NodeJS",
@@ -357,7 +357,7 @@ export const projects = [
     description:
       "This is a fully responsive ToDo web application built with React.js. It allows users to manage their daily tasks efficiently through a simple and clean user interface. Users can add, mark as complete, and delete tasks in real-time. The app uses React hooks for state management and features smooth UX transitions. It is deployed using Netlify for fast and secure access.",
     image:
-      "https://img.freepik.com/free-photo/programming-background-with-person-working-with-codes-computer_23-2150010125.jpg?ga=GA1.1.256969843.1746618636&semt=ais_hybrid&w=740",
+      "/todo.png",
     tags: ["React Js", "Local Storage", "Git", "GitHub"],
     category: "React",
     github: "https://github.com/developerzohaib786/React-todo-app",
