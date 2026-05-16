@@ -40,14 +40,6 @@ const Heading = styled.h1`
   }
 `;
 
-const SubDesc = styled.p`
-  font-size: 15px;
-  color: ${({ theme }) => theme.text_secondary || '#aaa'};
-  max-width: 520px;
-  line-height: 1.7;
-  margin: 0 0 56px;
-`;
-
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));

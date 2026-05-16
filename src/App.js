@@ -11,7 +11,6 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Experience from "./components/Experience";
 import PullRequests from "./components/PullRequests";
-import ContributionGraph from "./components/ContributionGraph";
 import Hackathons from "./components/Hackathons";
 import ProjectDetails from "./components/ProjectDetails";
 import styled from "styled-components";
@@ -30,7 +29,6 @@ const Wrapper = styled.div`
 function App() {
   const [darkMode] = useState(true);
   const [openModal, setOpenModal] = useState({ state: false, project: null });
-  console.log(openModal)
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Router >

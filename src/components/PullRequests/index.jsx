@@ -40,14 +40,6 @@ const HeroHeading = styled.h1`
   }
 `;
 
-const HeroDesc = styled.p`
-  font-size: 15px;
-  color: ${({ theme }) => theme.text_secondary || '#aaa'};
-  max-width: 520px;
-  line-height: 1.7;
-  margin: 0 0 56px;
-`;
-
 const SectionHeader = styled.div`
   display: flex;
   align-items: center;
@@ -188,107 +180,6 @@ const PRNumber = styled.span`
   font-size: 11px;
   font-family: monospace;
   color: ${({ theme }) => theme.text_secondary || '#8b949e'};
-`;
-
-const CTABox = styled.div`
-  margin-top: 56px;
-  border: 1px solid ${({ theme }) => theme.card_border || '#2a2a2a'};
-  border-radius: 16px;
-  background: ${({ theme }) => theme.card || '#181818'};
-  padding: 48px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-
-  @media (max-width: 680px) {
-    flex-direction: column;
-    padding: 36px 28px;
-    align-items: flex-start;
-  }
-`;
-
-const CTALeft = styled.div`
-  flex: 1;
-`;
-
-const CTABadge = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 10px;
-  font-family: monospace;
-  letter-spacing: 0.1em;
-  color: ${({ theme }) => theme.primary || '#00ff9d'};
-  margin-bottom: 16px;
-`;
-
-const CTADot = styled.span`
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: ${({ theme }) => theme.primary || '#00ff9d'};
-`;
-
-const CTAHeading = styled.h3`
-  font-size: clamp(22px, 3vw, 30px);
-  font-weight: 700;
-  color: ${({ theme }) => theme.text_primary || '#fff'};
-  margin: 0 0 12px;
-  line-height: 1.2;
-`;
-
-const CTADesc = styled.p`
-  font-size: 13.5px;
-  color: ${({ theme }) => theme.text_secondary || '#8b949e'};
-  line-height: 1.6;
-  margin: 0;
-  max-width: 380px;
-`;
-
-const CTAButtons = styled.div`
-  display: flex;
-  gap: 12px;
-  flex-shrink: 0;
-
-  @media (max-width: 680px) {
-    margin-top: 24px;
-  }
-`;
-
-const PrimaryBtn = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 22px;
-  border-radius: 8px;
-  background: ${({ theme }) => theme.primary || '#00ff9d'};
-  color: #000;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: opacity 0.2s;
-
-  &:hover { opacity: 0.85; }
-`;
-
-const SecondaryBtn = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 22px;
-  border-radius: 8px;
-  border: 1px solid ${({ theme }) => theme.primary || '#00FF00'};
-  color: ${({ theme }) => theme.primary || '#00FF00'};
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  background: transparent;
-  transition: background 0.2s;
-
-  &:hover {
-    background: ${({ theme }) => theme.primary + '15' || '#00FF0015'};
-  }
 `;
 
 function parseLink(link) {
