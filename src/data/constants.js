@@ -123,33 +123,44 @@ export const skills = [
       // },
     ],
   },
-  // {
-  //   title: "Android",
-  //   skills: [
-  //     {
-  //       name: "Java",
-  //       image:
-  //         "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
-  //     },
-  //     {
-  //       name: "Kotlin",
-  //       image:
-  //         "https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg",
-  //     },
-  //     {
-  //       name: "XML",
-  //       image:
-  //         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBMw6_RdwKQ9bDFfnKDX1iwMl4bVJEvd9PP53XuIw&s",
-  //     },
-  //     {
-  //       name: "Android Studio",
-  //       image:
-  //         "https://developer.android.com/static/studio/images/new-studio-logo-1_1920.png",
-  //     },
-  //   ],
-  // },
+
   {
-    title: "Others",
+    title: "System Design",
+    skills: [
+      {
+        name: "Redis",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
+      },
+      {
+        name: "Kafka",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg",
+      },
+      {
+        name: "BullMQ",
+        image:
+          "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"%2300FF00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"6\" rx=\"1\"/><rect x=\"4\" y=\"14\" width=\"16\" height=\"6\" rx=\"1\"/><path d=\"M8 10v4\"/><path d=\"M16 10v4\"/></svg>",
+      },
+      {
+        name: "Rate Limiting",
+        image:
+          "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"%2300FF00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M12 12l4-2\"/><path d=\"M12 4v2\"/><path d=\"M20 12h-2\"/><path d=\"M12 20v-2\"/><path d=\"M4 12h2\"/></svg>",
+      },
+      {
+        name: "Node.js Clustering",
+        image: "https://nodejs.org/static/images/logo.svg",
+      },
+      {
+        name: "Message Queues",
+        image:
+          "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"%2300FF00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"6\" rx=\"1\"/><rect x=\"4\" y=\"14\" width=\"16\" height=\"6\" rx=\"1\"/><path d=\"M8 10v4\"/><path d=\"M16 10v4\"/></svg>",
+      },
+    ],
+  },
+ 
+  {
+    title: "DevOps",
     skills: [
       {
         name: "Git",
@@ -161,35 +172,35 @@ export const skills = [
         image:
           "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
       },
-      // {
-      //   name: "Docker",
-      //   image:
-      //     "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg",
-      // },
       {
-        name: "Netlify",
+        name: "Docker",
         image:
-          "https://seeklogo.com/images/N/netlify-logo-BD8F8A77E2-seeklogo.com.png",
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
       },
       {
-        name: "VS Code",
+        name: "Linux",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519",
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
       },
       {
-        name: "Postman",
+        name: "Bash Scripting",
         image:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
+          "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"%2300FF00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 5h16v14H4z\"/><path d=\"M7 9l3 3-3 3\"/><path d=\"M12 15h5\"/></svg>",
       },
       {
-        name: "C++",
+        name: "Networking",
         image:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+          "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"%2300FF00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"6\" cy=\"12\" r=\"2\"/><circle cx=\"18\" cy=\"6\" r=\"2\"/><circle cx=\"18\" cy=\"18\" r=\"2\"/><path d=\"M8 12h6\"/><path d=\"M16.5 7.5L12 12\"/><path d=\"M16.5 16.5L12 12\"/></svg>",
       },
       {
-        name: "Figma",
+        name: "AWS",
         image:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+          "https://tse1.mm.bing.net/th/id/OIP.zSAf0JyneS6TFCRO0-a2NwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+      },
+      {
+        name: "Kubernetes",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
       },
     ],
   },
