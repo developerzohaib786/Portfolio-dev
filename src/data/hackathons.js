@@ -1,6 +1,6 @@
 const hackathonsData = [
   {
-    title: "AUREX AI 2026 - CivicConnect",
+    title: "AUREX AI 2026",
     place: "3rd Place",
     date: "May 13-14, 2026",
     duration: "6-Hour Hackathon",

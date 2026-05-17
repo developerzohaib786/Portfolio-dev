@@ -1,6 +1,6 @@
 import { CloseRounded, GitHub, LinkedIn } from '@mui/icons-material';
 import { Modal } from '@mui/material';
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -71,6 +71,33 @@ const Image = styled.img`
     border-radius: 12px;
     margin-top: 30px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+`;
+
+const ImageWrap = styled.div`
+    width: 100%;
+    position: relative;
+`;
+
+const NavButton = styled.button`
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    ${({ $left }) => ($left ? 'left: 10px;' : 'right: 10px;')}
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    &:hover {
+        background: rgba(0, 0, 0, 0.6);
+    }
 `;
 
 const Label = styled.div`
@@ -182,8 +209,32 @@ const Button = styled.a`
 `;
 
 
-const index = ({ openModal, setOpenModal }) => {
+const ProjectDetails = ({ openModal, setOpenModal }) => {
     const project = openModal?.project;
+
+    const images = useMemo(() => {
+        const list = Array.isArray(project?.images) ? project.images.filter(Boolean) : [];
+        if (list.length > 0) return list;
+        return project?.image ? [project.image] : [];
+    }, [project]);
+
+    const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+    const activeSrc = images[activeImageIndex] || images[0] || project?.image || '';
+    const hasMultipleImages = images.length > 1;
+    const hasGithub = Boolean(project?.github);
+    const hasWebapp = Boolean(project?.webapp);
+
+    const goPrev = () => {
+        if (images.length === 0) return;
+        setActiveImageIndex((idx) => (idx - 1 + images.length) % images.length);
+    }
+
+    const goNext = () => {
+        if (images.length === 0) return;
+        setActiveImageIndex((idx) => (idx + 1) % images.length);
+    }
+
     return (
         <Modal open={true} onClose={() => setOpenModal({ state: false, project: null })}>
             <Container>
@@ -197,7 +248,15 @@ const index = ({ openModal, setOpenModal }) => {
                         }}
                         onClick={() => setOpenModal({ state: false, project: null })}
                     />
-                    <Image src={project?.image} />
+                    <ImageWrap>
+                        <Image src={activeSrc} />
+                        {hasMultipleImages && (
+                            <>
+                                <NavButton type="button" $left onClick={goPrev} aria-label="Previous image">‹</NavButton>
+                                <NavButton type="button" onClick={goNext} aria-label="Next image">›</NavButton>
+                            </>
+                        )}
+                    </ImageWrap>
                     <Title>{project?.title}</Title>
                     <Date>{project.date}</Date>
                     <Tags>
@@ -225,10 +284,16 @@ const index = ({ openModal, setOpenModal }) => {
                             </Members>
                         </>
                     )}
-                    <ButtonGroup>
-                        <Button dull href={project?.github} target='new'>View Code</Button>
-                        <Button href={project?.webapp} target='new'>View Live App</Button>
-                    </ButtonGroup>
+                    {(hasGithub || hasWebapp) && (
+                        <ButtonGroup>
+                            {hasGithub && (
+                                <Button dull href={project?.github} target='new'>View Code</Button>
+                            )}
+                            {hasWebapp && (
+                                <Button href={project?.webapp} target='new'>View Live App</Button>
+                            )}
+                        </ButtonGroup>
+                    )}
                 </Wrapper>
             </Container>
 
@@ -236,4 +301,4 @@ const index = ({ openModal, setOpenModal }) => {
     )
 }
 
-export default index
+export default ProjectDetails

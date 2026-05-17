@@ -233,7 +233,7 @@ const Hackathons = () => {
       <Inner>
         <PageChip>HACKATHONS AND COMPETITIONS</PageChip>
         <Heading>
-          Built Under {' '} <span>Pressure &amp; Deadline 🏆</span>
+          Hackathon {' '} <span>Wins 🏆</span>
         </Heading>
         <Grid>
           {hackathonsData.map((h, i) => (
@@ -256,7 +256,7 @@ const Hackathons = () => {
 
               <Divider />
 
-              <Description>{h.description}</Description>
+              {/* <Description>{h.description}</Description> */}
 
               <TagsRow>
                 {h.tags.map((tag, j) => <Tag key={j}>{tag}</Tag>)}
@@ -279,11 +279,11 @@ const Hackathons = () => {
                 </SecondaryLink>
               </LinksRow>
 
-              {h.liveLink && (
+              {/* {h.liveLink && (
                 <ReadMoreBtn as="a" href={h.liveLink} target="_blank" rel="noopener noreferrer" style={{ marginTop: 12, marginBottom: 0 }}>
                   Read More →
                 </ReadMoreBtn>
-              )}
+              )} */}
             </Card>
           ))}
         </Grid>

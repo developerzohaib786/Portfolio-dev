@@ -13,6 +13,7 @@ import Experience from "./components/Experience";
 import PullRequests from "./components/PullRequests";
 import Hackathons from "./components/Hackathons";
 import ProjectDetails from "./components/ProjectDetails";
+import DevopsProjects from "./components/DevopsProjects";
 import styled from "styled-components";
 
 const Body = styled.div`
@@ -42,6 +43,7 @@ function App() {
           <PullRequests />
           <Hackathons />
           <Projects openModal={openModal} setOpenModal={setOpenModal} />
+          <DevopsProjects openModal={openModal} setOpenModal={setOpenModal} />
           <Wrapper>
             <Contact />
           </Wrapper>
