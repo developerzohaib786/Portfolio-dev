@@ -7,7 +7,7 @@ export const Bio = {
     "Open Source Contributor",
   ],
   description:
-    "Full-Stack Engineer building scalable systems with MERN/PERN + Next.js. I architect CI/CD pipelines (Jenkins, AWS ECS), real-time apps (Redis, Kafka), and AI-powered platforms. 🥉 AUREX Hackathon winner. Open source contributor to Joplin & Apache Polaris",
+    "Full-Stack Engineer building scalable systems with MERN/PERN + Next.js. I architect CI/CD pipelines (Jenkins, AWS ECS), real-time apps (Redis, Kafka), and AI-powered platforms. AUREX Hackathon winner. Open source contributor to Joplin & Apache Polaris",
   github: "https://github.com/developerzohaib786",
   resume:
     "",

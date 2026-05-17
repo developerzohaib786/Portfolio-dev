@@ -6,6 +6,14 @@ import hackathonsData from '../../data/hackathons.js';
 const Section = styled.section`
   width: 100%;
   padding: 80px 0 60px;
+
+  @media (max-width: 768px) {
+    padding: 64px 0 44px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 56px 0 40px;
+  }
 `;
 
 const Inner = styled.div`
@@ -14,6 +22,10 @@ const Inner = styled.div`
   padding: 0 24px;
   box-sizing: border-box;
   margin: 0 auto;
+
+  @media (max-width: 480px) {
+    padding: 0 16px;
+  }
 `;
 
 const PageChip = styled.span`
@@ -26,6 +38,10 @@ const PageChip = styled.span`
   padding: 4px 12px;
   border-radius: 4px;
   margin-bottom: 24px;
+
+  @media (max-width: 480px) {
+    margin-bottom: 18px;
+  }
 `;
 
 const Heading = styled.h1`
@@ -34,6 +50,10 @@ const Heading = styled.h1`
   line-height: 1.1;
   color: ${({ theme }) => theme.text_primary || '#fff'};
   margin: 0 0 16px;
+
+  @media (max-width: 480px) {
+    margin: 0 0 12px;
+  }
 
   span {
     color: ${({ theme }) => theme.primary || '#00FF00'};
@@ -44,6 +64,16 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 `;
 
 const Card = styled.div`
@@ -62,6 +92,15 @@ const Card = styled.div`
                 0 8px 32px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
   }
+
+  @media (max-width: 768px) {
+    padding: 22px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 18px;
+    border-radius: 14px;
+  }
 `;
 
 const CardHeader = styled.div`
@@ -69,6 +108,10 @@ const CardHeader = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 16px;
+
+  @media (max-width: 480px) {
+    margin-bottom: 12px;
+  }
 `;
 
 const TrophyIcon = styled.div`
@@ -82,6 +125,13 @@ const TrophyIcon = styled.div`
   justify-content: center;
   font-size: 20px;
   flex-shrink: 0;
+
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+    font-size: 18px;
+  }
 `;
 
 const PlaceBadge = styled.span`
@@ -97,6 +147,11 @@ const PlaceBadge = styled.span`
   background: ${({ theme }) => theme.primary + '18' || '#00FF0018'};
   border: 1px solid ${({ theme }) => theme.primary + '40' || '#00FF0040'};
   color: ${({ theme }) => theme.primary || '#00FF00'};
+
+  @media (max-width: 480px) {
+    font-size: 10px;
+    padding: 4px 9px;
+  }
 `;
 
 const CardTitle = styled.h3`
@@ -105,6 +160,10 @@ const CardTitle = styled.h3`
   color: ${({ theme }) => theme.text_primary || '#fff'};
   margin: 0 0 6px;
   line-height: 1.3;
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 const Organizer = styled.p`
@@ -112,6 +171,10 @@ const Organizer = styled.p`
   font-family: monospace;
   color: ${({ theme }) => theme.text_secondary || '#888'};
   margin: 0 0 16px;
+
+  @media (max-width: 480px) {
+    margin: 0 0 12px;
+  }
 `;
 
 const MetaRow = styled.div`
@@ -120,6 +183,11 @@ const MetaRow = styled.div`
   gap: 16px;
   margin-bottom: 16px;
   flex-wrap: wrap;
+
+  @media (max-width: 480px) {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
 `;
 
 const MetaItem = styled.span`
@@ -141,6 +209,10 @@ const Divider = styled.div`
   height: 1px;
   background: ${({ theme }) => theme.card_border || '#2a2a2a'};
   margin: 16px 0;
+
+  @media (max-width: 480px) {
+    margin: 12px 0;
+  }
 `;
 
 const Description = styled.p`
@@ -149,6 +221,11 @@ const Description = styled.p`
   line-height: 1.65;
   margin: 0 0 20px;
   flex: 1;
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+    margin: 0 0 16px;
+  }
 `;
 
 const TagsRow = styled.div`
@@ -156,6 +233,10 @@ const TagsRow = styled.div`
   flex-wrap: wrap;
   gap: 7px;
   margin-bottom: 20px;
+
+  @media (max-width: 480px) {
+    margin-bottom: 16px;
+  }
 `;
 
 const Tag = styled.span`
@@ -188,6 +269,11 @@ const LinkBtn = styled.a`
   cursor: ${({ disabled }) => disabled ? 'default' : 'pointer'};
   opacity: ${({ disabled }) => disabled ? 0.35 : 1};
   pointer-events: ${({ disabled }) => disabled ? 'none' : 'auto'};
+
+  @media (max-width: 480px) {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 const PrimaryLink = styled(LinkBtn)`
@@ -239,7 +325,7 @@ const Hackathons = () => {
 
               <Divider />
 
-              <Description>{h.description}</Description>
+              {/* <Description>{h.description}</Description> */}
 
               <TagsRow>
                 {h.tags.map((tag, j) => <Tag key={j}>{tag}</Tag>)}
