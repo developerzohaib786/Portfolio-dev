@@ -11,6 +11,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Experience from "./components/Experience";
 import PullRequests from "./components/PullRequests";
+import Certificates from "./components/Certificates";
 import Hackathons from "./components/Hackathons";
 import ProjectDetails from "./components/ProjectDetails";
 import DevopsProjects from "./components/DevopsProjects";
@@ -41,6 +42,7 @@ function App() {
             <Experience />
           </Wrapper>
           <PullRequests />
+          <Certificates />
           <Hackathons />
           <Projects openModal={openModal} setOpenModal={setOpenModal} />
           <DevopsProjects openModal={openModal} setOpenModal={setOpenModal} />
