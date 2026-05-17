@@ -210,23 +210,6 @@ const SecondaryLink = styled(LinkBtn)`
   }
 `;
 
-const ReadMoreBtn = styled.button`
-  background: none;
-  border: none;
-  color: ${({ theme }) => theme.primary || '#00FF00'};
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-family: inherit;
-  margin-bottom: 16px;
-
-  &:hover { opacity: 0.8; }
-`;
-
 const Hackathons = () => {
   return (
     <Section>
@@ -256,7 +239,7 @@ const Hackathons = () => {
 
               <Divider />
 
-              {/* <Description>{h.description}</Description> */}
+              <Description>{h.description}</Description>
 
               <TagsRow>
                 {h.tags.map((tag, j) => <Tag key={j}>{tag}</Tag>)}
