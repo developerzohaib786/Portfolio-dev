@@ -215,19 +215,6 @@ const Divider = styled.div`
   }
 `;
 
-const Description = styled.p`
-  font-size: 13.5px;
-  color: ${({ theme }) => theme.text_secondary || '#aaa'};
-  line-height: 1.65;
-  margin: 0 0 20px;
-  flex: 1;
-
-  @media (max-width: 480px) {
-    font-size: 13px;
-    margin: 0 0 16px;
-  }
-`;
-
 const TagsRow = styled.div`
   display: flex;
   flex-wrap: wrap;
