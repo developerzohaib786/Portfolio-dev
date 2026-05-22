@@ -76,57 +76,73 @@ const CardsTrack = styled.div`
   display: flex;
   gap: 16px;
   width: max-content;
-  animation: ${scrollAnim} 35s linear infinite;
+  animation: ${scrollAnim} 15s linear infinite;
   &:hover { animation-play-state: paused; }
 `;
 
+// Card now aligns items vertically (logo on top, text on bottom) with spacing
 const Card = styled.a`
-  flex: 0 0 260px;
+  position: relative;
+  flex: 0 0 170px;
   background: ${({ theme }) => theme.card || '#181818'};
   border: 1px solid ${({ theme }) => theme.card_border || '#2a2a2a'};
   border-radius: 12px;
-  padding: 18px 18px 16px;
+  padding: 28px 20px 20px;
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  min-height: 160px;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 140px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
   cursor: pointer;
 
   &:hover {
+    transform: translateY(-2px);
     border-color: ${({ theme }) => theme.primary || '#00ff9d'};
     box-shadow: 0 0 0 1px ${({ theme }) => theme.primary + '30' || '#00ff9d30'};
   }
 `;
 
-const CardTop = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 12px;
-`;
-
-const Badge = styled.span`
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 10px;
-  font-family: monospace;
-  letter-spacing: 0.08em;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 4px;
-  border: 1px solid ${({ theme }) => (theme.primary || '#00ff9d') + '30'};
-  background: ${({ theme }) => (theme.primary || '#00ff9d') + '10'};
-  color: ${({ theme }) => theme.primary || '#00ff9d'};
-`;
-
 const ExternalIcon = styled.span`
+  position: absolute;
+  top: 12px;
+  right: 12px;
   color: ${({ theme }) => theme.text_secondary || '#666'};
   display: flex;
   align-items: center;
+  font-size: 13px;
+  opacity: 0.4;
+  transition: opacity 0.2s, color 0.2s;
+
+  ${Card}:hover & {
+    opacity: 1;
+    color: ${({ theme }) => theme.primary || '#00ff9d'};
+  }
+`;
+
+// Brand image styling to keep sizing uniform across different logos
+const LogoImage = styled.img`
+  height: 42px;
+  width: auto;
+  max-width: 80px;
+  object-fit: contain;
+  filter: grayscale(20%) brightness(95%);
+  transition: filter 0.2s, transform 0.2s;
+
+  ${Card}:hover & {
+    filter: grayscale(0%) brightness(100%);
+    transform: scale(1.05);
+  }
+`;
+
+const LogoText = styled.div`
   font-size: 14px;
-  opacity: 0.6;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: ${({ theme }) => theme.text_primary || '#e6edf3'};
+  opacity: 0.8;
   transition: opacity 0.2s;
 
   ${Card}:hover & {
@@ -134,59 +150,32 @@ const ExternalIcon = styled.span`
   }
 `;
 
-const CardTitle = styled.p`
-  font-size: 14px;
-  font-weight: 600;
-  color: ${({ theme }) => theme.text_primary || '#e6edf3'};
-  line-height: 1.4;
-  margin: 0 0 10px;
-`;
-
-const CardDesc = styled.p`
-  font-size: 12.5px;
-  color: ${({ theme }) => theme.text_secondary || '#8b949e'};
-  line-height: 1.55;
-  margin: 0 0 auto;
-`;
-
-const CardFooter = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 16px;
-`;
-
-const Mono = styled.span`
-  font-size: 11px;
-  font-family: monospace;
-  color: ${({ theme }) => theme.text_secondary || '#8b949e'};
-`;
-
+// Data with reliable internet logo source assets
 const certificates = [
   {
     title: 'AWS',
     file: '/certificates/aws.pdf',
-    desc: 'Cloud fundamentals and AWS services overview.',
+    logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
   },
   {
     title: 'Docker',
     file: '/certificates/docker.pdf',
-    desc: 'Containerization basics, images, and workflows.',
+    logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
   },
   {
     title: 'Kubernetes',
     file: '/certificates/kubernetes.pdf',
-    desc: 'Orchestration concepts: pods, deployments, services.',
+    logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg',
   },
   {
     title: 'Next.js',
     file: '/certificates/nextjs.pdf',
-    desc: 'Full-stack React with routing, SSR, and deployment.',
+    logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
   },
   {
     title: 'Node.js',
     file: '/certificates/nodejs.pdf',
-    desc: 'Backend fundamentals with Node.js runtime and APIs.',
+    logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
   },
 ];
 
@@ -214,18 +203,15 @@ const Certificates = () => {
           <CardsTrack>
             {doubled.map((cert, i) => (
               <Card key={i} href={cert.file} target="_blank" rel="noopener noreferrer">
-                <CardTop>
-                  <Badge>CERTIFICATE</Badge>
-                  <ExternalIcon>
-                    <FiExternalLink />
-                  </ExternalIcon>
-                </CardTop>
-                <CardTitle>{cert.title}</CardTitle>
-                <CardDesc>{cert.desc}</CardDesc>
-                <CardFooter>
-                  <Mono>public/certificates</Mono>
-                  <Mono>PDF</Mono>
-                </CardFooter>
+                <ExternalIcon>
+                  <FiExternalLink />
+                </ExternalIcon>
+                
+                {/* Visual tech identity element */}
+                <LogoImage src={cert.logoUrl} alt={`${cert.title} logo`} />
+                
+                {/* Accompanying clean text metadata */}
+                <LogoText>{cert.title}</LogoText>
               </Card>
             ))}
           </CardsTrack>
